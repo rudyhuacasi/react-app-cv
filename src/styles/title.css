@@ -1,0 +1,40 @@
+.text_typing {
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4.5rem;
+    color: #133102;
+    cursor: context-menu;
+    overflow: hidden;
+    border-right: 6px solid yellow;
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    width: 0;
+    display: inline-block;
+    animation: typing 2.5s steps(20, end) forwards, blink 0.65s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.centro{
+    display: inline-flex;
+    align-items: center;
+}
+
+.fondo-title{
+    background-color: #08a9c7;
+}

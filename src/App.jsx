@@ -1,11 +1,48 @@
 // import { useState } from 'react'
 import './App.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import Title from './components/title'
 import GeneralInfo from './components/general-info'
 
+function App() {
+
+  return (
+    <>
+      <Title />
+      <div className="container my-5  p-5 border border-secondary rounded-4 box">
+        <GeneralInfo />
+          <div className="d-flex justify-content-between mt-5">
+              <button>
+                  <div className="svg-wrapper-1">
+                      <div className="svg-wrapper">
+                      <FontAwesomeIcon icon={faArrowLeft} className="arrow-icon"/>
+                      </div>
+                  </div>
+                  <span>Indietro</span>
+              </button>
+              <button>
+                  <div className="svg-wrapper-1">
+                      <div className="svg-wrapper">
+                      <FontAwesomeIcon icon={faArrowRight} className="arrow-icon"/>
+                      </div>
+                  </div>
+                  <span>Avanti</span>
+              </button>
+          </div>
+        
+        
+      </div>
+    </>
+  )
+}
+
+export default App
 // const GeneralInfo = ({ data, onEdit }) => {
 //   return (
-//     <div className="section">
+  //     <div className="section">
 //       <h2>Informazioni Generali</h2>
 //       {data.isEditing ? (
 //         <>
@@ -90,17 +127,3 @@ import GeneralInfo from './components/general-info'
 // }
 
 // export default App;
-function App() {
-
-  return (
-    <>
-      <Title />
-      <div className="container my-5  p-5 border border-light-subtle rounded-4">
-        <GeneralInfo />
-
-      </div>
-    </>
-  )
-}
-
-export default App

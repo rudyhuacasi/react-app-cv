@@ -1,25 +1,25 @@
+import React from 'react';
 import '../styles/general-info.css'
 
-function generalInfo() {
+function generalInfo({ formData, handleChange }) {
 
   return (
     <>
-    <form class="row g-3">
-        <div class="form-floating mb-3">
-            <input type="name" class="form-control" id="floatingPassword" placeholder="Password" required/>
-            <label for="floatingPassword">Password</label>
+    <form className="row g-3">
+        <div className="form-floating mb-3">
+            <input type="text" className="form-control" id="floatingNome"  value={formData.nome} onChange={handleChange} placeholder="Password" required/>
+            <label for="floatingNome">Nome</label>
         </div>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required/>
-            <label for="floatingInput">Email address</label>
+        <div className="form-floating mb-3">
+            <input type="email" className="form-control" id="floatingInput" value={formData.email} onChange={handleChange} placeholder="name@example.com" required/>
+            <label for="floatingInput">E-mail</label>
         </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required/>
-            <label for="floatingPassword">Password</label>
+        <div className="form-floating">
+            <input type="tel" className="form-control" id="floatingTelefono" value={formData.telefono} onChange={handleChange}  placeholder="2015449634" maxLength="10" required pattern="[0-9]*" inputmode="numeric"/>
+            <label for="floatingTelefono">Numero di telefono</label>
         </div>
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-        </div>
+        
+
     </form>
     </>
   )

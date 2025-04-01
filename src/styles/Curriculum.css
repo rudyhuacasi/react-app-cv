@@ -1,0 +1,40 @@
+
+.lable {
+    margin-top: 1px;
+    font-size: 19px;
+    line-height: 22px;
+    color: #056dfa;
+    letter-spacing: 1px;
+}
+
+.modifica:hover {
+    background: #056bfa49;
+}
+
+.btn-warning:hover .penna {
+    scale: 2.0;
+    padding-top: 0.5rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

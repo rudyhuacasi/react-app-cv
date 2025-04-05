@@ -17,6 +17,11 @@
     animation: spin 1s linear infinite;
 }
 
+.btn-danger:hover .trash {
+    scale: 2.0;
+    padding-top: 0.5rem;
+    animation: spin 1s linear infinite;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);

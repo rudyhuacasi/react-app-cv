@@ -1,11 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Generatepdf from "./Generatepdf";
 import '../styles/Curriculum.css'
 
 
-function Curriculum({ formData, onEdit }) {
+function Curriculum({ formData, onEdit, onReset }) {
   return (
     <div>
       <h2 className="text-center mb-4">Riepilogo delle informazioni</h2>
@@ -37,10 +38,14 @@ function Curriculum({ formData, onEdit }) {
             <FontAwesomeIcon icon={faPenToSquare} className='penna'/>
             <span className='mx-4'>Modifica</span>
         </button>
+        <button onClick={onReset} className=" ms-4 btn btn-danger">
+            <FontAwesomeIcon icon={faTrash} className='trash'/>
+            <span className='mx-4'>Cancella tutto</span>
+        </button>
       </div>
       <div className="text-center mt-4">
         <button onClick={() => Generatepdf(formData)}>
-            Descargar PDF
+            Scarica PDF
         </button>
       </div>
     </div>

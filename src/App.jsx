@@ -28,6 +28,25 @@ function App() {
     immaggine:'',
     profilo:'',
   });
+  const handleReset = () => {
+  setFormData({
+    nome: '',
+    email: '',
+    telefono: '',
+    scuola: '',
+    titoloStudio: '',
+    dataStudio: '',
+    azienda: '',
+    posizione: '',
+    responsabilità: '',
+    dataInizio: '',
+    dataFine: '',
+    immaggine:'',
+    profilo:'',
+  });
+  setStep(1); // Torna all'inizio
+};
+
 
   const [error, setError] = useState('');
 
@@ -72,6 +91,8 @@ function App() {
     }
   };
 
+  
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -102,7 +123,7 @@ function App() {
         {step === 1 && <GeneralInfo formData={formData} handleChange={handleChange} />}
         {step === 2 && <EducationInfo formData={formData} handleChange={handleChange} />}
         {step === 3 && <ExperienceInfo formData={formData} handleChange={handleChange} handleImageChange={handleImageChange}/>}
-        {step === 4 && <Curriculum formData={formData} onEdit={() => setStep(1)} />}
+        {step === 4 && <Curriculum formData={formData} onEdit={() => setStep(1)} onReset={handleReset}/>}
 
           <div className="d-flex justify-content-between mt-5">
             {step > 1 && step < 4 && (

@@ -28,7 +28,7 @@ function ExperienceInfo({ formData, handleChange, handleImageChange  }) {
         <label for="formFile" class="form-label">Fotografia</label>
         <input class="form-control" name="immaggine" onChange={handleImageChange} accept="image/*" type="file" id="formFile"/>
       </div>
-      {/* Vista previa de la imagen */}
+      {/* immaggine  */}
       {formData.immaggine && <div className="mt-3"><img src={formData.immaggine} alt="Vista previa" style={{ maxWidth: '200px' }} /></div>}
     </form>
   );

@@ -18,7 +18,10 @@ function generalInfo({ formData, handleChange }) {
             <input type="tel" className="form-control" id="floatingTelefono" name='telefono' value={formData.telefono} onChange={handleChange}  placeholder="2015449634" maxLength="10" required pattern="[0-9]*" inputmode="numeric"/>
             <label for="floatingTelefono">Numero di telefono</label>
         </div>
-        
+        <div class="mb-3">
+          <label for="validationTextarea" class="form-label">Profilo Professionale</label>
+          <textarea class="form-control" rows='5' id="validationTextarea" placeholder="Required example textarea" name='profilo' value={formData.profilo} onChange={handleChange} required></textarea>
+        </div>
     </form>
     </>
   )

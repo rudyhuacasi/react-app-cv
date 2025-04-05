@@ -1,6 +1,7 @@
 import React from 'react';
 
-function ExperienceInfo({ formData, handleChange }) {
+function ExperienceInfo({ formData, handleChange, handleImageChange  }) {
+
   return (
     <form className="row g-3">
       <div className="form-floating mb-3">
@@ -23,6 +24,12 @@ function ExperienceInfo({ formData, handleChange }) {
         <input type="date" className="form-control" id="floatingDataFine" name="dataFine" value={formData.dataFine} onChange={handleChange} required />
         <label htmlFor="floatingDataFine">Data fine</label>
       </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Fotografia</label>
+        <input class="form-control" name="immaggine" onChange={handleImageChange} accept="image/*" type="file" id="formFile"/>
+      </div>
+      {/* Vista previa de la imagen */}
+      {formData.immaggine && <div className="mt-3"><img src={formData.immaggine} alt="Vista previa" style={{ maxWidth: '200px' }} /></div>}
     </form>
   );
 }

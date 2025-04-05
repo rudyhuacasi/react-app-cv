@@ -1,8 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-
+import Generatepdf from "./Generatepdf";
 import '../styles/Curriculum.css'
+
 
 function Curriculum({ formData, onEdit }) {
   return (
@@ -20,12 +21,26 @@ function Curriculum({ formData, onEdit }) {
         <li className="list-group-item"><strong>Responsabilità:</strong> {formData.responsabilità}</li>
         <li className="list-group-item"><strong>Data inizio:</strong> {formData.dataInizio}</li>
         <li className="list-group-item"><strong>Data fine:</strong> {formData.dataFine}</li>
+        <li className="list-group-item"><strong>Profilo professionale:</strong> {formData.profilo}</li>
+        {formData.immaggine && (
+          <li className="list-group-item">
+            <strong>Immagine:</strong>
+            <div className="mt-2 text-center">
+              <img src={formData.immaggine} alt={formData.immaggine} style={{ maxWidth: '200px' }} />
+            </div>
+          </li>
+        )}
       </ul>
 
       <div className="text-center mt-4">
-        <button onClick={onEdit} className="btn btn-warning">  
-            <FontAwesomeIcon icon={faPenToSquare}  className='penna'/>
+        <button onClick={onEdit} className="btn btn-warning">
+            <FontAwesomeIcon icon={faPenToSquare} className='penna'/>
             <span className='mx-4'>Modifica</span>
+        </button>
+      </div>
+      <div className="text-center mt-4">
+        <button onClick={() => Generatepdf(formData)}>
+            Descargar PDF
         </button>
       </div>
     </div>

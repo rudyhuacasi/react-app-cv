@@ -24,7 +24,9 @@ function App() {
     posizione: '',
     responsabilità: '',
     dataInizio: '',
-    dataFine: ''
+    dataFine: '',
+    immaggine:'',
+    profilo:'',
   });
 
   const [error, setError] = useState('');
@@ -32,7 +34,7 @@ function App() {
   // Validazione prima di andare avanti
   const validateStep = () => {
     if (step === 1) {
-      if (!formData.nome || !formData.email || !formData.telefono) {
+      if (!formData.nome || !formData.email || !formData.telefono || !formData.profilo) {
         setError('⚠ Compila tutti i campi');
         return false;
       }
@@ -42,7 +44,7 @@ function App() {
         return false;
       }
     } else if (step === 3) {
-      if (!formData.azienda || !formData.posizione || !formData.responsabilità || !formData.dataInizio || !formData.dataFine) {
+      if (!formData.azienda || !formData.posizione || !formData.responsabilità || !formData.dataInizio || !formData.dataFine || !formData.immaggine) {
         setError('⚠ Compila tutti i campi');
         return false;
       }
@@ -70,11 +72,27 @@ function App() {
     }
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          immaggine: reader.result, // in base64
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    if (e.target.name !== 'immaggine') {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
   return (
     <>
@@ -83,7 +101,7 @@ function App() {
         {error && <p className="text-danger text-center">{error}</p>}
         {step === 1 && <GeneralInfo formData={formData} handleChange={handleChange} />}
         {step === 2 && <EducationInfo formData={formData} handleChange={handleChange} />}
-        {step === 3 && <ExperienceInfo formData={formData} handleChange={handleChange} />}
+        {step === 3 && <ExperienceInfo formData={formData} handleChange={handleChange} handleImageChange={handleImageChange}/>}
         {step === 4 && <Curriculum formData={formData} onEdit={() => setStep(1)} />}
 
           <div className="d-flex justify-content-between mt-5">

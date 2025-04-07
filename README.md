@@ -1,12 +1,39 @@
-# React + Vite
+# Generatore di Curriculum  in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Questa applicazione web, sviluppata con **React**, permette agli utenti di compilare un modulo passo dopo passo per generare il proprio **curriculum in formato PDF**. Include validazione dei campi, caricamento immagine del profilo e anteprima prima dell’esportazione.
 
-Currently, two official plugins are available:
+##  Funzionalità
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Form diviso in 3 step: Informazioni Generali, Formazione, Esperienza Lavorativa  
+- Validazione dei campi obbligatori in ogni step  
+- Anteprima del CV prima del download  
+- Esportazione in PDF con immagine profilo inclusa  
+- Navigazione con pulsanti personalizzati e icone  
+- Immagine del profilo con forma circolare  
+- Possibilità di modificare o cancellare i dati inseriti  
 
-## Expanding the ESLint configuration
+## Tecnologie Utilizzate
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **JavaScript (ES6+)**
+- **Bootstrap** (per utility class)
+- **jsPDF** + **html2canvas** (per generare il PDF)
+- **FontAwesome** (icone per la navigazione)
+
+## Installazione e Avvio
+
+1. **Scarica o clona il repository**
+   Apri il prompt dei comandi o PowerShell ed esegui:
+
+   ```bash
+   git clone https://github.com/rudyhuacasi/react-app-cv
+   cd react-app-cv
+
+2. **Installa le dipendenze**
+    ```bash
+    npm install
+
+
+3. **Avvia il progetto in modalità sviluppo**
+    ```bash
+    npm run dev
